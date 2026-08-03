@@ -8,7 +8,7 @@
   const directAudio = {
     "Single Cow Moo.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Single_Cow_Moo.ogg",
     "Pig grunt - Erdie.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Pig_grunt_-_Erdie.ogg",
-    "Chickens demanding food.ogg": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Chickens_demanding_food.ogg",
+    "Chickens demanding food.ogg": "https://upload.wikimedia.org/wikipedia/commons/4/43/Young_rooster_crowing.ogg",
     "Wiehern.ogg": "https://upload.wikimedia.org/wikipedia/commons/d/db/Wiehern.ogg",
     "Sheep bleat.ogg": "https://upload.wikimedia.org/wikipedia/commons/2/28/Sheep_bleat.ogg",
     "Barking of a dog.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg"
