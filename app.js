@@ -1,10 +1,56 @@
+const commonsFile = fileName =>
+  `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
+
 const animals = [
-  { id: "cow", emoji: "🐮", color: "#7aa8ff", notes: [196, 164, 147] },
-  { id: "pig", emoji: "🐷", color: "#ff9eb5", notes: [330, 392, 330] },
-  { id: "chicken", emoji: "🐔", color: "#ffd45f", notes: [660, 784, 880] },
-  { id: "horse", emoji: "🐴", color: "#d9a36c", notes: [220, 247, 220, 196] },
-  { id: "sheep", emoji: "🐑", color: "#b7df8b", notes: [294, 262, 247] },
-  { id: "dog", emoji: "🐶", color: "#65cdb8", notes: [440, 330, 440] }
+  {
+    id: "cow",
+    name: "mucca",
+    emoji: "🐮",
+    color: "#7aa8ff",
+    sound: commonsFile("Single Cow Moo.ogg"),
+    fallbackNotes: [196, 164, 147]
+  },
+  {
+    id: "pig",
+    name: "maiale",
+    emoji: "🐷",
+    color: "#ff9eb5",
+    sound: commonsFile("Pig grunt - Erdie.ogg"),
+    fallbackNotes: [330, 392, 330]
+  },
+  {
+    id: "chicken",
+    name: "gallina",
+    emoji: "🐔",
+    color: "#ffd45f",
+    sound: commonsFile("Chickens demanding food.ogg"),
+    fallbackNotes: [660, 784, 880],
+    stopAfter: 2.2
+  },
+  {
+    id: "horse",
+    name: "cavallo",
+    emoji: "🐴",
+    color: "#d9a36c",
+    sound: commonsFile("Wiehern.ogg"),
+    fallbackNotes: [220, 247, 220, 196]
+  },
+  {
+    id: "sheep",
+    name: "pecora",
+    emoji: "🐑",
+    color: "#b7df8b",
+    sound: commonsFile("Sheep bleat.ogg"),
+    fallbackNotes: [294, 262, 247]
+  },
+  {
+    id: "dog",
+    name: "cane",
+    emoji: "🐶",
+    color: "#65cdb8",
+    sound: commonsFile("Barking of a dog.ogg"),
+    fallbackNotes: [440, 330, 440]
+  }
 ];
 
 const board = document.querySelector("#gameBoard");
@@ -23,6 +69,8 @@ let lockBoard = false;
 let matches = 0;
 let moves = 0;
 let audioContext = null;
+let currentAudio = null;
+let stopTimer = null;
 
 function getAudioContext() {
   if (!audioContext) {
@@ -57,13 +105,56 @@ function playToneSequence(notes, options = {}) {
   });
 }
 
+function stopCurrentAudio() {
+  clearTimeout(stopTimer);
+  if (!currentAudio) return;
+  currentAudio.pause();
+  currentAudio.currentTime = 0;
+  currentAudio = null;
+}
+
 function playAnimalSound(animal) {
-  const type = animal.id === "cow" || animal.id === "horse" ? "sawtooth" : "sine";
-  playToneSequence(animal.notes, { type, duration: 0.2, gap: 0.04 });
+  stopCurrentAudio();
+
+  const audio = new Audio(animal.sound);
+  audio.preload = "auto";
+  audio.volume = 0.9;
+  currentAudio = audio;
+
+  const fallback = () => {
+    if (currentAudio === audio) currentAudio = null;
+    const type = animal.id === "cow" || animal.id === "horse" ? "sawtooth" : "sine";
+    playToneSequence(animal.fallbackNotes, { type, duration: 0.2, gap: 0.04 });
+  };
+
+  audio.addEventListener("error", fallback, { once: true });
+  audio.addEventListener("ended", () => {
+    if (currentAudio === audio) currentAudio = null;
+  }, { once: true });
+
+  audio.play().catch(fallback);
+
+  if (animal.stopAfter) {
+    stopTimer = setTimeout(() => {
+      if (currentAudio === audio) stopCurrentAudio();
+    }, animal.stopAfter * 1000);
+  }
 }
 
 function playSuccess() {
-  playToneSequence([523, 659, 784, 1046], { type: "triangle", duration: 0.22, gap: 0.03 });
+  playToneSequence([523, 659, 784, 1046], {
+    type: "triangle",
+    duration: 0.22,
+    gap: 0.03
+  });
+}
+
+function animateAnimal(card, className) {
+  const animal = card.querySelector(".animal");
+  if (!animal) return;
+  animal.classList.remove(className);
+  void animal.offsetWidth;
+  animal.classList.add(className);
 }
 
 function shuffle(array) {
@@ -109,7 +200,8 @@ function flipCard(card, animal) {
   if (lockBoard || card === firstCard || card.classList.contains("is-matched")) return;
 
   card.classList.add("is-flipped");
-  card.setAttribute("aria-label", `Carta ${animal.id}`);
+  card.setAttribute("aria-label", `Carta ${animal.name}`);
+  setTimeout(() => animateAnimal(card, "animal-awake"), 180);
   playAnimalSound(animal);
 
   if (!firstCard) {
@@ -126,16 +218,22 @@ function flipCard(card, animal) {
 
 function checkMatch() {
   const isMatch = firstCard.dataset.id === secondCard.dataset.id;
+
   if (isMatch) {
-    firstCard.classList.add("is-matched");
-    secondCard.classList.add("is-matched");
+    const matchedCards = [firstCard, secondCard];
+    matchedCards.forEach(card => card.classList.add("is-matched"));
+
+    setTimeout(() => {
+      matchedCards.forEach(card => animateAnimal(card, "animal-celebrate"));
+    }, 120);
+
     matches += 1;
     scoreEl.textContent = `${matches} / 6`;
     messageEl.textContent = "Hai trovato una coppia!";
     resetTurn();
 
     if (matches === animals.length) {
-      setTimeout(showCelebration, 650);
+      setTimeout(showCelebration, 900);
     }
   } else {
     lockBoard = true;
@@ -147,7 +245,7 @@ function checkMatch() {
       secondCard.setAttribute("aria-label", "Carta coperta");
       resetTurn();
       messageEl.textContent = "Tocca due carte e ascolta i suoni.";
-    }, 950);
+    }, 1250);
   }
 }
 
@@ -157,14 +255,13 @@ function resetTurn() {
 }
 
 function showCelebration() {
+  stopCurrentAudio();
   celebration.hidden = false;
   playSuccess();
-  animals.forEach((animal, index) => {
-    setTimeout(() => playAnimalSound(animal), 700 + index * 240);
-  });
 }
 
 function startGame() {
+  stopCurrentAudio();
   matches = 0;
   moves = 0;
   firstCard = null;
