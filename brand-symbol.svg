@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Dito che tocca una spirale colorata</title>
+  <desc id="desc">Prima versione vettoriale del simbolo Colori da Ascoltare</desc>
+  <defs>
+    <linearGradient id="spiralGradient" x1="45" y1="42" x2="152" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7f73"/>
+      <stop offset="0.22" stop-color="#ffd45f"/>
+      <stop offset="0.45" stop-color="#65cdb8"/>
+      <stop offset="0.68" stop-color="#7aa8ff"/>
+      <stop offset="0.86" stop-color="#c48cff"/>
+      <stop offset="1" stop-color="#ff7f73"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#243238" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <circle cx="100" cy="100" r="91" fill="#fffdf8"/>
+
+  <path
+    d="M101 39
+       C137 38 159 62 157 91
+       C155 120 130 139 101 135
+       C76 132 59 113 62 91
+       C65 70 83 58 102 61
+       C119 64 129 76 127 91
+       C125 104 113 112 101 109
+       C91 107 85 99 87 91
+       C88 84 94 81 100 82"
+    fill="none"
+    stroke="url(#spiralGradient)"
+    stroke-width="13"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#softShadow)"/>
+
+  <circle cx="100" cy="82" r="7.5" fill="#ffd45f" stroke="#fffdf8" stroke-width="3"/>
+
+  <path
+    d="M92 171
+       C92 157 92 143 92 129
+       L92 103
+       C92 96 96 91 102 91
+       C108 91 112 96 112 103
+       L112 132
+       C119 126 128 128 132 134
+       C139 130 148 133 151 140
+       C159 139 166 145 166 153
+       C166 166 157 178 146 185
+       C137 191 126 194 114 194
+       C102 194 92 185 92 171Z"
+    fill="#ffd0b8"
+    stroke="#243238"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <path d="M112 132 L112 148" fill="none" stroke="#243238" stroke-width="5" stroke-linecap="round"/>
+  <path d="M132 134 L132 151" fill="none" stroke="#243238" stroke-width="5" stroke-linecap="round"/>
+  <path d="M151 140 L151 155" fill="none" stroke="#243238" stroke-width="5" stroke-linecap="round"/>
+</svg>
