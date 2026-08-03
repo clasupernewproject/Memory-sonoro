@@ -17,6 +17,7 @@
   background-position: center;
   background-size: contain;
   filter: drop-shadow(0 7px 10px rgba(36, 50, 56, .12));
+  transition: transform .22s ease;
 }
 
 .card:hover .card-back::after,
@@ -24,6 +25,37 @@
   transform: scale(1.04);
 }
 
-.card-back::after {
-  transition: transform .22s ease;
+.card-front .animal {
+  transform-origin: 50% 88%;
+  will-change: transform;
+}
+
+.card-front .animal.animal-awake {
+  animation: animal-awake .62s cubic-bezier(.2, .85, .3, 1);
+}
+
+.card-front .animal.animal-celebrate {
+  animation: animal-celebrate .9s cubic-bezier(.2, .85, .25, 1);
+}
+
+@keyframes animal-awake {
+  0% { transform: translateY(8%) scale(.72) rotate(-7deg); opacity: .25; }
+  55% { transform: translateY(-12%) scale(1.12) rotate(5deg); opacity: 1; }
+  78% { transform: translateY(-3%) scale(.97) rotate(-2deg); }
+  100% { transform: translateY(-5%) scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes animal-celebrate {
+  0%, 100% { transform: translateY(-5%) scale(1) rotate(0); }
+  20% { transform: translateY(-21%) scale(1.12) rotate(-8deg); }
+  40% { transform: translateY(-5%) scale(1.03) rotate(8deg); }
+  60% { transform: translateY(-17%) scale(1.1) rotate(-5deg); }
+  80% { transform: translateY(-5%) scale(1.02) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-front .animal.animal-awake,
+  .card-front .animal.animal-celebrate {
+    animation: none;
+  }
 }
