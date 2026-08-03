@@ -1,17 +1,17 @@
 /*
-  Correzione audio per Safari/iPad.
-  Traduce i link con reindirizzamento di Wikimedia negli URL diretti dei file OGG.
+  Audio compatibile con Safari/iPad.
+  Usa le transcodifiche MP3 di Wikimedia invece dei file OGG.
 */
 (() => {
   const NativeAudio = window.Audio;
 
   const directAudio = {
-    "Single Cow Moo.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Single_Cow_Moo.ogg",
-    "Pig grunt - Erdie.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Pig_grunt_-_Erdie.ogg",
-    "Chickens demanding food.ogg": "https://upload.wikimedia.org/wikipedia/commons/4/43/Young_rooster_crowing.ogg",
-    "Wiehern.ogg": "https://upload.wikimedia.org/wikipedia/commons/d/db/Wiehern.ogg",
-    "Sheep bleat.ogg": "https://upload.wikimedia.org/wikipedia/commons/2/28/Sheep_bleat.ogg",
-    "Barking of a dog.ogg": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg"
+    "Single Cow Moo.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Single_Cow_Moo.ogg/Single_Cow_Moo.ogg.mp3",
+    "Pig grunt - Erdie.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ac/Pig_grunt_-_Erdie.ogg/Pig_grunt_-_Erdie.ogg.mp3",
+    "Chickens demanding food.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/43/Young_rooster_crowing.ogg/Young_rooster_crowing.ogg.mp3",
+    "Wiehern.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Wiehern.ogg/Wiehern.ogg.mp3",
+    "Sheep bleat.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/Sheep_bleat.ogg/Sheep_bleat.ogg.mp3",
+    "Barking of a dog.ogg": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a2/Barking_of_a_dog.ogg/Barking_of_a_dog.ogg.mp3"
   };
 
   function resolveAudioSource(source = "") {
