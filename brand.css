@@ -1,0 +1,29 @@
+/* Identità visiva sperimentale Colori da Ascoltare */
+.card-back {
+  background: #fffdf8;
+  border: 7px solid #ffffff;
+  overflow: hidden;
+}
+
+.card-back::after {
+  content: "";
+  display: block;
+  width: 78%;
+  height: 78%;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("brand-symbol.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 7px 10px rgba(36, 50, 56, .12));
+}
+
+.card:hover .card-back::after,
+.card:focus-visible .card-back::after {
+  transform: scale(1.04);
+}
+
+.card-back::after {
+  transition: transform .22s ease;
+}
