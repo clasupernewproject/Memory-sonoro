@@ -18,12 +18,14 @@ LEVELS[3].items.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wik
 LEVELS[4].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
 LEVELS[4].items.find(x=>x.id==='woodpecker').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Woodpeckerdrum.ogg';
+LEVELS[4].items.find(x=>x.id==='squirrel').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Tamiasciurus%20douglasii.ogg';
 // Giungla
 LEVELS[5].items.find(x=>x.id==='rain').audio='https://upload.wikimedia.org/wikipedia/commons/3/3d/Rain.ogg';
 LEVELS[5].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[5].items.find(x=>x.id==='monkey').audio='https://upload.wikimedia.org/wikipedia/commons/b/b8/Howler_monkey.ogg';
 LEVELS[5].items.find(x=>x.id==='parrot').audio='https://upload.wikimedia.org/wikipedia/commons/7/7c/Talking_Parrot_%28Psittacula_krameri%29.ogg';
 LEVELS[5].items.find(x=>x.id==='jaguar').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Jaguar%20saw.flac';
+LEVELS[5].items.find(x=>x.id==='toucan').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Keel-billed%20toucan.ogg';
 // Notte
 LEVELS[6].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[6].items.find(x=>x.id==='wolf').audio='https://upload.wikimedia.org/wikipedia/commons/8/87/Wolf_howls.ogg';
