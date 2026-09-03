@@ -2,6 +2,8 @@
 // Città
 LEVELS[1].items.find(x=>x.id==='train').audio='https://upload.wikimedia.org/wikipedia/commons/7/7a/WWS_Signalhorntrainhorn.ogg';
 LEVELS[1].items.find(x=>x.id==='bell').audio='https://upload.wikimedia.org/wikipedia/commons/9/90/Doorbell-cheap-dingdong.ogg';
+LEVELS[1].items.find(x=>x.id==='horn').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Car%20Horn.wav';
+LEVELS[1].items.find(x=>x.id==='siren').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Siren.ogg';
 // Mare
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://upload.wikimedia.org/wikipedia/commons/6/64/Ocean_Waves_on_a_Tropical_Beach.ogg';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
@@ -30,3 +32,4 @@ LEVELS[7].items.find(x=>x.id==='fart').audio='https://commons.wikimedia.org/wiki
 LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Burp.ogg';
 LEVELS[7].items.find(x=>x.id==='hiccup').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hiccupsound.ogg';
 LEVELS[7].items.find(x=>x.id==='sneeze').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Sneeze.ogg';
+LEVELS[7].items.find(x=>x.id==='bla').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Four%20Years%20Old%20child%20laughing.ogg';
