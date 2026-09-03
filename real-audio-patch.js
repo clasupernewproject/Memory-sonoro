@@ -9,7 +9,8 @@ LEVELS[1].items.find(x=>x.id==='beep').audio='https://commons.wikimedia.org/wiki
 // Mare
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Small%20sea%20waves%20at%20rocky%20beach.opus';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
-LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
+// Richiamo reale di gabbiano: 1,6 s / 11 KB, molto più rapido da caricare su iPhone.
+LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/M%C3%B6wengeschrei.ogg';
 LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
 LEVELS[2].items.find(x=>x.id==='splash').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Emptying%20syringe%20in%20water%20slow.ogg';
 LEVELS[2].items.find(x=>x.id==='shell').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Conch%20shell.ogg';
