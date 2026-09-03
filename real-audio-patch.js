@@ -4,10 +4,12 @@ LEVELS[1].items.find(x=>x.id==='train').audio='https://upload.wikimedia.org/wiki
 LEVELS[1].items.find(x=>x.id==='bell').audio='https://upload.wikimedia.org/wikipedia/commons/9/90/Doorbell-cheap-dingdong.ogg';
 LEVELS[1].items.find(x=>x.id==='horn').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Car%20Horn.wav';
 LEVELS[1].items.find(x=>x.id==='siren').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Siren.ogg';
+LEVELS[1].items.find(x=>x.id==='bus').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/WWS%20CityBusMANSG220horn.ogg';
 // Mare
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://upload.wikimedia.org/wikipedia/commons/6/64/Ocean_Waves_on_a_Tropical_Beach.ogg';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
 LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
+LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
 LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adult%20marmot%20whistling.ogv';
@@ -33,3 +35,4 @@ LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki
 LEVELS[7].items.find(x=>x.id==='hiccup').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hiccupsound.ogg';
 LEVELS[7].items.find(x=>x.id==='sneeze').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Sneeze.ogg';
 LEVELS[7].items.find(x=>x.id==='bla').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Four%20Years%20Old%20child%20laughing.ogg';
+LEVELS[7].items.find(x=>x.id==='raspberry').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Blowing%20a%20raspberry.ogv';
