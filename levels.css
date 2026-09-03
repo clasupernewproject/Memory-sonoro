@@ -2,7 +2,7 @@
 :root{font-family:system-ui,-apple-system,"Avenir Next",Arial,sans-serif}
 html,body{margin:0;min-height:100%;background:#86d3f7;-webkit-text-size-adjust:100%}
 body{min-height:100svh}
-.level-bg{background-image:url("all-levels.jpg?v=13");background-repeat:no-repeat;background-size:400% 200%}
+.level-bg{background-image:url("all-levels.jpg?v=15");background-repeat:no-repeat;background-size:400% 200%;background-origin:border-box;background-clip:border-box}
 .l0{background-position:0% 0%}.l1{background-position:33.333% 0%}.l2{background-position:66.666% 0%}.l3{background-position:100% 0%}
 .l4{background-position:0% 100%}.l5{background-position:33.333% 100%}.l6{background-position:66.666% 100%}.l7{background-position:100% 100%}
 .menu-page{background:linear-gradient(#83d7ff,#e9fff2);color:#13245d}
@@ -11,12 +11,12 @@ body{min-height:100svh}
 .brand{font-weight:900;color:#167b3d;margin:5px 0}.choose{font-weight:700;margin:20px 0 14px}
 .level-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .level-card{text-decoration:none;color:#18215b;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #25455a29;text-align:left;-webkit-tap-highlight-color:transparent}
-.thumb{display:block;width:100%;aspect-ratio:3/4}
+.thumb{display:block;width:100%;aspect-ratio:3/4;background-size:400% 200%}
 .level-label{display:flex;flex-direction:column;padding:10px 12px 13px;gap:2px}.level-label b{font-size:13px;color:#667}.level-label span{font-weight:900;font-size:17px}
 @media(min-width:720px){.level-grid{grid-template-columns:repeat(4,1fr)}}
 .play-page{display:grid;place-items:start center;background:#80d2fa;overflow-x:hidden;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .screen{position:relative;width:min(100vw,768px);width:min(100dvw,768px);aspect-ratio:3/4;overflow:hidden;background:#8ed9ff;touch-action:manipulation;-webkit-user-select:none;user-select:none}
-.art{position:absolute;inset:0}
+.art{position:absolute;inset:0;width:100%;height:100%;background-size:400% 200%}
 .counter{position:absolute;z-index:7;font-weight:900;color:#261a72;display:grid;place-items:center;background:#fff;border-radius:999px;box-shadow:0 2px 8px #0002;font-size:clamp(14px,4.6vw,30px);height:5.5%;top:27.8%}
 .pairs-counter{left:28.5%;width:20%}.moves-counter{left:62.8%;width:14%}
 .hot{position:absolute;z-index:8;border:0;background:transparent;-webkit-tap-highlight-color:transparent}
