@@ -16,8 +16,11 @@ const LEVELS=[
 {name:'La notte',bg:6,items:[{id:'owl',name:'Gufo',emoji:'🦉',tone:[220,175,220]},{id:'cricket',name:'Grillo',emoji:'🦗',tone:[1800,1800,1800,1800]},{id:'frog',name:'Rana',emoji:'🐸',tone:[160,110,160]},{id:'wolf',name:'Lupo',emoji:'🐺',tone:[260,310,360,420]},{id:'wind',name:'Vento',emoji:'💨',noise:true,tone:[260]},{id:'nightbird',name:'Uccello',emoji:'🐦',tone:[820,980,780]}]},
 {name:'Suoni monelli',bg:7,items:[{id:'fart',name:'Puzzetta',emoji:'💨',tone:[90,70,55],noise:true},{id:'burp',name:'Rutto',emoji:'🥴',tone:[120,90,70]},{id:'raspberry',name:'Pernacchia',emoji:'😛',tone:[170,145,160],noise:true},{id:'sneeze',name:'Starnuto',emoji:'🤧',tone:[650,220],noise:true},{id:'hiccup',name:'Singhiozzo',emoji:'😮',tone:[360,520]},{id:'bla',name:'Bla bla',emoji:'🗯️',tone:[300,420,310,440]}]}
 ];
-const levelIndex=Math.max(0,Math.min(7,Number(new URLSearchParams(location.search).get('level')||0))),level=LEVELS[levelIndex];
-document.title='Memory Sonoro · '+level.name;const art=document.querySelector('#art');art.classList.add('l'+level.bg);
+const rawLevel=Number(new URLSearchParams(location.search).get('level')||0);
+const levelIndex=Number.isFinite(rawLevel)?Math.max(0,Math.min(7,rawLevel)):0,level=LEVELS[levelIndex];
+document.title='Memory Sonoro · '+level.name;
+const art=document.querySelector('#art'),screen=document.querySelector('#screen');
+art.classList.add('l'+level.bg);screen.classList.add('l'+level.bg);
 let first=null,lock=false,moves=0,pairs=0,enabled=true,ctx,currentAudio=null;const grid=document.querySelector('#grid'),movesEl=document.querySelector('#moves'),pairsEl=document.querySelector('#pairs'),win=document.querySelector('#win');
 function shuffle(a){a=[...a];for(let i=a.length-1;i;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const players=new Map();function audioCtx(){ctx??=new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx}
