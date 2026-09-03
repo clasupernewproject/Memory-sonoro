@@ -14,11 +14,13 @@ LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
 LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adult%20marmot%20whistling.ogv';
 LEVELS[3].items.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden%20eagle.ogg';
+LEVELS[3].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
 // Bosco
 LEVELS[4].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
 LEVELS[4].items.find(x=>x.id==='woodpecker').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Woodpeckerdrum.ogg';
 LEVELS[4].items.find(x=>x.id==='squirrel').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Tamiasciurus%20douglasii.ogg';
+LEVELS[4].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
 // Giungla
 LEVELS[5].items.find(x=>x.id==='rain').audio='https://upload.wikimedia.org/wikipedia/commons/3/3d/Rain.ogg';
 LEVELS[5].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
