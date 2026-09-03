@@ -17,6 +17,7 @@ LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki
 LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/2006%2C%20Murmeldjur%20BHW%202006.ogg';
 LEVELS[3].items.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden%20eagle.ogg';
 LEVELS[3].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
+LEVELS[3].items.find(x=>x.id==='wind').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Howling%20wind.ogg';
 // Bosco
 LEVELS[4].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
@@ -37,6 +38,7 @@ LEVELS[6].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipe
 // Grillo reale: 10 secondi / 94 KB, al posto della lunga registrazione ambientale.
 LEVELS[6].items.find(x=>x.id==='cricket').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Field%20cricket%20Gryllus%20pennsylvanicus.ogg';
 LEVELS[6].items.find(x=>x.id==='nightbird').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Red-necked%20Nightjar%20call%20%28Caprimulgus%20ruficollis%29.ogg';
+LEVELS[6].items.find(x=>x.id==='wind').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Howling%20wind.ogg';
 // Suoni monelli: registrazioni umane reali
 LEVELS[7].items.find(x=>x.id==='fart').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Fart.ogg';
 LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Burp.ogg';
