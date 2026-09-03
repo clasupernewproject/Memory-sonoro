@@ -7,9 +7,11 @@ LEVELS[2].items.find(x=>x.id==='wave').audio='https://upload.wikimedia.org/wikip
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
+LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adult%20marmot%20whistling.ogv';
 // Bosco
 LEVELS[4].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
+LEVELS[4].items.find(x=>x.id==='woodpecker').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Woodpeckerdrum.ogg';
 // Giungla
 LEVELS[5].items.find(x=>x.id==='rain').audio='https://upload.wikimedia.org/wikipedia/commons/3/3d/Rain.ogg';
 LEVELS[5].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
