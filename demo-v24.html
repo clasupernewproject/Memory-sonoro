@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7fd2fa">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Memory Sonoro · Demo v24</title>
+<link rel="stylesheet" href="levels.css?v=24">
+</head>
+<body class="menu-page">
+<main class="menu-shell">
+  <h1>Memory Sonoro</h1>
+  <p class="brand">Colori da Ascoltare</p>
+  <p class="choose">Scegli un livello</p>
+  <section class="level-grid" id="levelGrid"></section>
+</main>
+<script>
+const cards=[
+  {title:'La fattoria',emoji:'🐄',art:0,game:0},
+  {title:'La città',emoji:'🚦',art:1,game:1},
+  {title:'La giungla',emoji:'🐆',art:2,game:5},
+  {title:'La montagna',emoji:'🏔️',art:3,game:3},
+  {title:'Il bosco',emoji:'🌳',art:4,game:4},
+  {title:'La notte',emoji:'🌙',art:5,game:6},
+  {title:'Il mare',emoji:'🌊',art:6,game:2},
+  {title:'Suoni monelli',emoji:'💨',art:7,game:7}
+];
+const grid=document.querySelector('#levelGrid');
+cards.forEach((x,i)=>{
+  const a=document.createElement('a');
+  a.href='play-v21.html?level='+x.game+'&build=24';
+  a.className='level-card';
+  a.innerHTML=`<span class="thumb level-bg l${x.art}"></span><span class="level-label"><b>Livello ${i+1}</b><span>${x.emoji} ${x.title}</span></span>`;
+  grid.appendChild(a);
+});
+</script>
+</body>
+</html>
