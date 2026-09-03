@@ -1,8 +1,8 @@
 const LEVELS=[
 {name:'La fattoria',bg:0,items:[
 {id:'cow',name:'Mucca',emoji:'🐄',audio:'https://upload.wikimedia.org/wikipedia/commons/4/48/Mudchute_cow_1.ogg'},
-{id:'rooster',name:'Gallo',emoji:'🐓',audio:'https://upload.wikimedia.org/wikipedia/commons/c/c5/Rooster_crowing.ogg'},
-{id:'sheep',name:'Pecora',emoji:'🐑',audio:'https://upload.wikimedia.org/wikipedia/commons/2/28/Sheep_bleat.ogg'},
+{id:'rooster',name:'Gallo',emoji:'🐓',audio:'https://upload.wikimedia.org/wikipedia/commons/c/c5/Rooster_crowing.ogg',start:0.55},
+{id:'sheep',name:'Pecora',emoji:'🐑',audio:'https://upload.wikimedia.org/wikipedia/commons/8/8f/Sheep_bleating.ogg'},
 {id:'horse',name:'Cavallo',emoji:'🐎',audio:'https://upload.wikimedia.org/wikipedia/commons/d/db/Wiehern.ogg'},
 {id:'pig',name:'Maiale',emoji:'🐖',audio:'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mudchute_pig_2.ogg'},
 {id:'dog',name:'Cane',emoji:'🐕',audio:'https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg'}]},
@@ -55,7 +55,7 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i;i--){const j=Math.floor(Math
 function stopAudio(){if(currentAudio){try{currentAudio.pause();currentAudio.currentTime=0}catch(e){}currentAudio=null}}
 function audioCtx(){ctx??=new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx}
 function fallbackBeep(){const c=audioCtx(),o=c.createOscillator(),g=c.createGain(),t=c.currentTime;o.type='triangle';o.frequency.value=330;g.gain.setValueAtTime(.08,t);g.gain.exponentialRampToValueAtTime(.001,t+.18);o.connect(g).connect(c.destination);o.start(t);o.stop(t+.2)}
-function play(s){if(!enabled)return;stopAudio();if(!s.audio){fallbackBeep();return}const src=s.audio.startsWith('data:')?s.audio:s.audio+'?v=25';const a=new Audio(src);a.preload='auto';a.volume=1;currentAudio=a;const p=a.play();if(p&&p.catch)p.catch(()=>fallbackBeep())}
+function play(s){if(!enabled)return;stopAudio();if(!s.audio){fallbackBeep();return}const src=s.audio.startsWith('data:')?s.audio:s.audio+'?v=30';const a=new Audio(src);a.preload='auto';a.volume=1;currentAudio=a;const startPlay=()=>{try{if(s.start)a.currentTime=s.start}catch(e){}const p=a.play();if(p&&p.catch)p.catch(()=>fallbackBeep())};if(s.start){if(a.readyState>=1)startPlay();else a.addEventListener('loadedmetadata',startPlay,{once:true});a.load()}else startPlay()}
 function reset(){stopAudio();grid.innerHTML='';first=null;lock=false;moves=pairs=0;movesEl.textContent=0;pairsEl.textContent=0;win.hidden=true;shuffle(level.items.flatMap(x=>[x,x])).forEach(s=>{const b=document.createElement('button');b.className='card';b.innerHTML=`<span class="inner"><span class="face back"></span><span class="face front"><span class="animal">${s.emoji}</span><span class="label">${s.name}</span></span></span>`;b.onclick=()=>pick(b,s);grid.appendChild(b)})}
 function pick(card,s){if(lock||card.classList.contains('flipped'))return;card.classList.add('flipped');play(s);if(!first){first={card,s};return}moves++;movesEl.textContent=moves;lock=true;if(first.s.id===s.id){setTimeout(()=>{first.card.classList.add('matched');card.classList.add('matched');pairs++;pairsEl.textContent=pairs;first=null;lock=false;if(pairs===6)setTimeout(()=>win.hidden=false,350)},350)}else{setTimeout(()=>{first.card.classList.remove('flipped');card.classList.remove('flipped');first=null;lock=false},950)}}
 document.querySelector('#restart').onclick=reset;document.querySelector('#again').onclick=reset;document.querySelector('#sound').onclick=()=>{enabled=!enabled;if(!enabled)stopAudio()};reset();
