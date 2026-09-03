@@ -2,7 +2,7 @@
 :root{font-family:system-ui,-apple-system,"Avenir Next",Arial,sans-serif}
 html,body{margin:0;min-height:100%;background:#86d3f7;-webkit-text-size-adjust:100%}
 body{min-height:100svh}
-.level-bg{background-image:url("all-levels.jpg");background-repeat:no-repeat;background-size:400% 200%}
+.level-bg{background-image:url("all-levels.jpg?v=13");background-repeat:no-repeat;background-size:400% 200%}
 .l0{background-position:0% 0%}.l1{background-position:33.333% 0%}.l2{background-position:66.666% 0%}.l3{background-position:100% 0%}
 .l4{background-position:0% 100%}.l5{background-position:33.333% 100%}.l6{background-position:66.666% 100%}.l7{background-position:100% 100%}
 .menu-page{background:linear-gradient(#83d7ff,#e9fff2);color:#13245d}
