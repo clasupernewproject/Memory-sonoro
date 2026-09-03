@@ -1,0 +1,1 @@
+Background artwork publishing fix in progress. Existing all-levels.jpg on main is only 13,808 bytes; the new illustrated sprite is being republished under a cache-busted asset name.
