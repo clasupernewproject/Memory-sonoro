@@ -1,7 +1,7 @@
 const sounds=[
 {id:'cow',name:'Mucca',emoji:'🐄',f:[145,125,110],audio:'https://upload.wikimedia.org/wikipedia/commons/4/48/Mudchute_cow_1.ogg'},
 {id:'rooster',name:'Gallo',emoji:'🐓',f:[540,690,820],audio:'https://upload.wikimedia.org/wikipedia/commons/c/c5/Rooster_crowing.ogg'},
-{id:'sheep',name:'Pecora',emoji:'🐑',f:[245,220,205],audio:'https://upload.wikimedia.org/wikipedia/commons/2/28/Sheep_bleat.ogg'},
+{id:'sheep',name:'Pecora',emoji:'🐑',f:[245,220,205],audio:'https://upload.wikimedia.org/wikipedia/commons/8/8f/Sheep_bleating.ogg'},
 {id:'horse',name:'Cavallo',emoji:'🐎',f:[320,390,275],audio:'https://upload.wikimedia.org/wikipedia/commons/d/db/Wiehern.ogg'},
 {id:'pig',name:'Maiale',emoji:'🐖',f:[185,230,175],audio:'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mudchute_pig_2.ogg'},
 {id:'dog',name:'Cane',emoji:'🐕',f:[420,310,430],audio:'https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg'}];
