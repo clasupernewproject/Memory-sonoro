@@ -5,6 +5,7 @@ LEVELS[1].items.find(x=>x.id==='bell').audio='https://upload.wikimedia.org/wikip
 LEVELS[1].items.find(x=>x.id==='horn').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Car%20Horn.wav';
 LEVELS[1].items.find(x=>x.id==='siren').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Siren.ogg';
 LEVELS[1].items.find(x=>x.id==='bus').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/WWS%20CityBusMANSG220horn.ogg';
+LEVELS[1].items.find(x=>x.id==='beep').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Beep-09.ogg';
 // Mare
 // Onde leggere: 10 secondi / circa 18 KB invece del precedente file da 16,8 MB.
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Small%20sea%20waves%20at%20rocky%20beach.opus';
@@ -12,6 +13,7 @@ LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/w
 LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
 LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
 LEVELS[2].items.find(x=>x.id==='splash').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Emptying%20syringe%20in%20water%20slow.ogg';
+LEVELS[2].items.find(x=>x.id==='shell').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Conch%20shell.ogg';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
 // Audio-only molto più leggero del precedente video OGV da 13,44 MB.
