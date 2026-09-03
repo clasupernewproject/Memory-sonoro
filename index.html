@@ -3,34 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#80d2fa">
-<title>Memory Sonoro · La fattoria</title>
-<link rel="stylesheet" href="style.css?v=4">
+<meta name="theme-color" content="#7fd2fa">
+<title>Memory Sonoro · Colori da Ascoltare</title>
+<link rel="stylesheet" href="levels.css?v=8">
 </head>
-<body>
-<main class="screen">
-  <img class="art" alt="">
-  <div class="hot score-pairs"><span id="pairs">0</span> / 6</div>
-  <div class="hot score-moves" id="moves">0</div>
-  <button class="hot restart" id="restart" aria-label="Ricomincia"></button>
-  <button class="hot sound" id="sound" aria-label="Suono"></button>
-  <button class="hot menu" aria-label="Menu"></button>
-  <button class="hot help" aria-label="Aiuto"></button>
-  <section id="grid" class="grid" aria-label="Carte Memory"></section>
-  <div id="win" class="win" hidden>
-    <div class="panel"><div class="stars">⭐ ✨ ⭐</div><h2>Bravissimo!</h2>
-      <p>Hai trovato tutte le coppie.</p><button id="again">Gioca ancora</button></div>
-  </div>
+<body class="menu-page">
+<main class="menu-shell">
+  <h1>Memory Sonoro</h1>
+  <p class="brand">Colori da Ascoltare</p>
+  <p class="choose">Scegli un livello</p>
+  <section class="level-grid" id="levelGrid"></section>
 </main>
-<script src="farm-bg-1.js?v=1"></script>
-<script src="farm-bg-2.js?v=1"></script>
-<script src="farm-bg-3.js?v=1"></script>
-<script src="farm-bg-4.js?v=1"></script>
-<script src="card-data.js?v=1"></script>
 <script>
-document.querySelector('.art').src='data:image/jpeg;base64,'+window.FARM_BG_B64;
-document.documentElement.style.setProperty('--card-back','url("data:image/jpeg;base64,'+window.CARD_BACK_B64+'")');
+const levels=[
+ ['La fattoria','🐄'],['La città','🚦'],['Il mare','🌊'],['La montagna','🏔️'],
+ ['Il bosco','🌳'],['La giungla','🐆'],['La notte','🌙'],['Suoni monelli','💨']
+];
+const grid=document.querySelector('#levelGrid');
+levels.forEach((x,i)=>{
+ const a=document.createElement('a');a.href='play.html?level='+i;a.className='level-card';
+ a.innerHTML=`<span class="thumb level-bg l${i}"></span><span class="level-label"><b>Livello ${i+1}</b><span>${x[1]} ${x[0]}</span></span>`;
+ grid.appendChild(a);
+});
 </script>
-<script src="app.js?v=4"></script>
 </body>
 </html>
