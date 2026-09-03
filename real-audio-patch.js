@@ -9,7 +9,6 @@ LEVELS[1].items.find(x=>x.id==='beep').audio='https://commons.wikimedia.org/wiki
 // Mare
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Small%20sea%20waves%20at%20rocky%20beach.opus';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
-// Richiamo reale di gabbiano: 1,6 s / 11 KB, molto più rapido da caricare su iPhone.
 LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/M%C3%B6wengeschrei.ogg';
 LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
 LEVELS[2].items.find(x=>x.id==='splash').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Emptying%20syringe%20in%20water%20slow.ogg';
@@ -27,7 +26,6 @@ LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipe
 LEVELS[4].items.find(x=>x.id==='woodpecker').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Woodpeckerdrum.ogg';
 LEVELS[4].items.find(x=>x.id==='squirrel').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Tamiasciurus%20douglasii.ogg';
 LEVELS[4].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
-// Fruscio breve e leggero (2,1 s / 56 KB), pubblico dominio.
 LEVELS[4].items.find(x=>x.id==='leaves').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Picking%20something%20up.ogg';
 // Giungla
 LEVELS[5].items.find(x=>x.id==='rain').audio='https://upload.wikimedia.org/wikipedia/commons/3/3d/Rain.ogg';
@@ -49,5 +47,5 @@ LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki
 LEVELS[7].items.find(x=>x.id==='hiccup').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hiccupsound.ogg';
 LEVELS[7].items.find(x=>x.id==='sneeze').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Sneeze.ogg';
 LEVELS[7].items.find(x=>x.id==='bla').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Four%20Years%20Old%20child%20laughing.ogg';
-// Pernacchia audio-only: elimina il vecchio contenitore video OGV, più pesante e meno affidabile su iPhone.
-LEVELS[7].items.find(x=>x.id==='raspberry').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Voiceless%20linguolabial%20trill.wav';
+// Pernacchia registrata personalmente per Memory Sonoro.
+LEVELS[7].items.find(x=>x.id==='raspberry').audio='./pernacchia_nuova.mp3?v=2';
