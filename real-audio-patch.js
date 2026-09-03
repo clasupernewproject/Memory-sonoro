@@ -6,13 +6,15 @@ LEVELS[1].items.find(x=>x.id==='horn').audio='https://commons.wikimedia.org/wiki
 LEVELS[1].items.find(x=>x.id==='siren').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Siren.ogg';
 LEVELS[1].items.find(x=>x.id==='bus').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/WWS%20CityBusMANSG220horn.ogg';
 // Mare
-LEVELS[2].items.find(x=>x.id==='wave').audio='https://upload.wikimedia.org/wikipedia/commons/6/64/Ocean_Waves_on_a_Tropical_Beach.ogg';
+// Onde leggere: 10 secondi / circa 18 KB invece del precedente file da 16,8 MB.
+LEVELS[2].items.find(x=>x.id==='wave').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Small%20sea%20waves%20at%20rocky%20beach.opus';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
 LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
 LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
-LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adult%20marmot%20whistling.ogv';
+// Audio-only molto più leggero del precedente video OGV da 13,44 MB.
+LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/2006%2C%20Murmeldjur%20BHW%202006.ogg';
 LEVELS[3].items.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden%20eagle.ogg';
 LEVELS[3].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
 // Bosco
