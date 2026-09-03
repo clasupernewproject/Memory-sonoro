@@ -5,6 +5,7 @@ LEVELS[1].items.find(x=>x.id==='bell').audio='https://upload.wikimedia.org/wikip
 // Mare
 LEVELS[2].items.find(x=>x.id==='wave').audio='https://upload.wikimedia.org/wikipedia/commons/6/64/Ocean_Waves_on_a_Tropical_Beach.ogg';
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
+LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
 LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adult%20marmot%20whistling.ogv';
@@ -28,3 +29,4 @@ LEVELS[6].items.find(x=>x.id==='cricket').audio='https://commons.wikimedia.org/w
 LEVELS[7].items.find(x=>x.id==='fart').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Fart.ogg';
 LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Burp.ogg';
 LEVELS[7].items.find(x=>x.id==='hiccup').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hiccupsound.ogg';
+LEVELS[7].items.find(x=>x.id==='sneeze').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Sneeze.ogg';
