@@ -5,14 +5,14 @@ body{min-height:100svh}
 
 /* Eight real, separate high-resolution artworks uploaded from iPhone */
 .level-bg{background-repeat:no-repeat;background-size:100% 100%;background-position:center}
-.l0{background-image:url("artwork/56782C18-CD36-4E43-AB3F-2CAFEC2993BF.png?v=17")}
-.l1{background-image:url("artwork/9B95C128-CB87-4BE9-B7D7-C73752F6A839.png?v=17")}
-.l2{background-image:url("artwork/70B7FBFF-019D-4794-BC50-E843DD5EBD9F.png?v=17")}
-.l3{background-image:url("artwork/4AFD5EB2-CA11-4A80-B452-0198469C108C.png?v=17")}
-.l4{background-image:url("artwork/A07CC6AC-4A83-4CA9-8BAC-9EBF5FF4A348.png?v=17")}
-.l5{background-image:url("artwork/9F92454B-9D4F-4142-9535-15081EECEFDC.png?v=17")}
-.l6{background-image:url("artwork/F8CAD0DE-D9E5-4443-A144-F6F8B2835CBF.png?v=17")}
-.l7{background-image:url("artwork/90BE47CF-5861-4D51-8AE6-31A6A95E54D9.png?v=17")}
+.l0{background-image:url("artwork/56782C18-CD36-4E43-AB3F-2CAFEC2993BF.png?v=22")}
+.l1{background-image:url("artwork/9B95C128-CB87-4BE9-B7D7-C73752F6A839.png?v=22")}
+.l2{background-image:url("artwork/70B7FBFF-019D-4794-BC50-E843DD5EBD9F.png?v=22")}
+.l3{background-image:url("artwork/4AFD5EB2-CA11-4A80-B452-0198469C108C.png?v=22")}
+.l4{background-image:url("artwork/A07CC6AC-4A83-4CA9-8BAC-9EBF5FF4A348.png?v=22")}
+.l5{background-image:url("artwork/9F92454B-9D4F-4142-9535-15081EECEFDC.png?v=22")}
+.l6{background-image:url("artwork/F8CAD0DE-D9E5-4443-A144-F6F8B2835CBF.png?v=22")}
+.l7{background-image:url("artwork/90BE47CF-5861-4D51-8AE6-31A6A95E54D9.png?v=22")}
 
 .menu-page{background:linear-gradient(#83d7ff,#e9fff2);color:#13245d}
 .menu-shell{width:min(100%,900px);margin:auto;padding:calc(24px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));text-align:center}
