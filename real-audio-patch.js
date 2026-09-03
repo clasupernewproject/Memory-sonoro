@@ -48,4 +48,5 @@ LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki
 LEVELS[7].items.find(x=>x.id==='hiccup').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hiccupsound.ogg';
 LEVELS[7].items.find(x=>x.id==='sneeze').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Sneeze.ogg';
 LEVELS[7].items.find(x=>x.id==='bla').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Four%20Years%20Old%20child%20laughing.ogg';
-LEVELS[7].items.find(x=>x.id==='raspberry').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Blowing%20a%20raspberry.ogv';
+// Pernacchia audio-only: elimina il vecchio contenitore video OGV, più pesante e meno affidabile su iPhone.
+LEVELS[7].items.find(x=>x.id==='raspberry').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Voiceless%20linguolabial%20trill.wav';
