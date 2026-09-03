@@ -31,6 +31,7 @@ LEVELS[6].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikip
 LEVELS[6].items.find(x=>x.id==='wolf').audio='https://upload.wikimedia.org/wikipedia/commons/8/87/Wolf_howls.ogg';
 LEVELS[6].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
 LEVELS[6].items.find(x=>x.id==='cricket').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Atmo%20%E2%80%93%20Grillen%20mit%20V%C3%B6gel.mp3';
+LEVELS[6].items.find(x=>x.id==='nightbird').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Red-necked%20Nightjar%20call%20%28Caprimulgus%20ruficollis%29.ogg';
 // Suoni monelli: registrazioni umane reali
 LEVELS[7].items.find(x=>x.id==='fart').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Fart.ogg';
 LEVELS[7].items.find(x=>x.id==='burp').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Burp.ogg';
