@@ -11,6 +11,7 @@ LEVELS[2].items.find(x=>x.id==='wave').audio='https://commons.wikimedia.org/wiki
 LEVELS[2].items.find(x=>x.id==='dolphin').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/161691%20felixblume%20dolphin-screaming-underwater-in-caribbean-sea-mexico.wav';
 LEVELS[2].items.find(x=>x.id==='gull').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Gull%201.ogg';
 LEVELS[2].items.find(x=>x.id==='boat').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Bl%C3%BCmlisalp%20Horn.ogg';
+LEVELS[2].items.find(x=>x.id==='splash').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Emptying%20syringe%20in%20water%20slow.ogg';
 // Montagna
 LEVELS[3].items.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Male%20roe%20deer%20growl.ogg';
 // Audio-only molto più leggero del precedente video OGV da 13,44 MB.
@@ -18,6 +19,7 @@ LEVELS[3].items.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wi
 LEVELS[3].items.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden%20eagle.ogg';
 LEVELS[3].items.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
 LEVELS[3].items.find(x=>x.id==='wind').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Howling%20wind.ogg';
+LEVELS[3].items.find(x=>x.id==='cowbell').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Cowbell.ogg';
 // Bosco
 LEVELS[4].items.find(x=>x.id==='frog').audio='https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga';
 LEVELS[4].items.find(x=>x.id==='owl').audio='https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg';
