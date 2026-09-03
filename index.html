@@ -1,51 +1,36 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fff9ef" />
-  <title>Memory Sonoro – La Fattoria</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="brand.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#80d2fa">
+<title>Memory Sonoro · La fattoria</title>
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Colori da Ascoltare</p>
-        <h1>Memory Sonoro</h1>
-        <p class="subtitle">Livello 1 · La fattoria</p>
-      </div>
-      <button id="soundHelp" class="round-button" aria-label="Prova il suono">🔊</button>
-    </header>
-
-    <section class="status-card" aria-live="polite">
-      <div>
-        <span class="status-label">Coppie trovate</span>
-        <strong id="score">0 / 6</strong>
-      </div>
-      <div>
-        <span class="status-label">Mosse</span>
-        <strong id="moves">0</strong>
-      </div>
-      <button id="restart" class="restart-button">Ricomincia</button>
-    </section>
-
-    <p id="message" class="message">Tocca due carte e ascolta i suoni.</p>
-
-    <section id="gameBoard" class="game-board" aria-label="Tabellone del memory"></section>
-  </main>
-
-  <div id="celebration" class="celebration" hidden>
-    <div class="celebration-card">
-      <div class="animal-parade" aria-hidden="true">🐮 🐷 🐔 🐴 🐑 🐶</div>
-      <h2>Bravissimo!</h2>
-      <p>Hai trovato tutti i suoni della fattoria.</p>
-      <button id="playAgain" class="primary-button">Gioca ancora</button>
-    </div>
+<main class="screen">
+  <img class="art" alt="">
+  <div class="hot score-pairs"><span id="pairs">0</span> / 6</div>
+  <div class="hot score-moves" id="moves">0</div>
+  <button class="hot restart" id="restart" aria-label="Ricomincia"></button>
+  <button class="hot sound" id="sound" aria-label="Suono"></button>
+  <button class="hot menu" aria-label="Menu"></button>
+  <button class="hot help" aria-label="Aiuto"></button>
+  <section id="grid" class="grid" aria-label="Carte Memory"></section>
+  <div id="win" class="win" hidden>
+    <div class="panel"><div class="stars">⭐ ✨ ⭐</div><h2>Bravissimo!</h2>
+      <p>Hai trovato tutte le coppie.</p><button id="again">Gioca ancora</button></div>
   </div>
-
-  <script src="audio-direct.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+</main>
+<script src="farm-bg-1.js?v=1"></script>
+<script src="farm-bg-2.js?v=1"></script>
+<script src="farm-bg-3.js?v=1"></script>
+<script src="farm-bg-4.js?v=1"></script>
+<script src="card-data.js?v=1"></script>
+<script>
+document.querySelector('.art').src='data:image/jpeg;base64,'+window.FARM_BG_B64;
+document.documentElement.style.setProperty('--card-back','url("data:image/jpeg;base64,'+window.CARD_BACK_B64+'")');
+</script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
