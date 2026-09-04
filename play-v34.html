@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7fd2fa">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Memory Sonoro v34</title>
+<link rel="stylesheet" href="levels.css?v=34">
+</head>
+<body class="play-page">
+<main id="screen" class="screen">
+  <div id="art" class="art level-bg"></div>
+  <div class="counter pairs-counter"><span id="pairs">0</span></div>
+  <div class="counter moves-counter" id="moves">0</div>
+  <button class="hot restart" id="restart" aria-label="Ricomincia"></button>
+  <button class="hot sound-toggle" id="sound" aria-label="Audio">🔊</button>
+  <section id="grid" class="game-grid" aria-label="Carte Memory"></section>
+  <a class="home" href="index.html?v=34" aria-label="Scegli livello">⌂</a>
+  <div id="win" class="win" hidden>
+    <div class="panel"><div class="stars">⭐ ✨ ⭐</div><h2>Bravissimo!</h2><p>Hai trovato tutte le coppie.</p><button id="again">Gioca ancora</button><a href="index.html?v=34">Scegli un altro livello</a></div>
+  </div>
+</main>
+<script src="levels-v21.js?v=34"></script>
+<script>
+LEVELS[0].items.find(x=>x.id==='sheep').audio='https://upload.wikimedia.org/wikipedia/commons/1/13/Sheep_bleating.ogg';
+LEVELS[0].items.find(x=>x.id==='rooster').start=0.55;
+LEVELS[1].items.find(x=>x.id==='horn').emoji='🚗';
+</script>
+<script src="custom-audio.js?v=34"></script>
+</body>
+</html>
