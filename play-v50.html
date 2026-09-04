@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7fd2fa">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Memory Sonoro v50</title>
+<link rel="stylesheet" href="levels.css?v=50">
+</head>
+<body class="play-page">
+<main id="screen" class="screen">
+  <div id="art" class="art level-bg"></div>
+  <div class="counter pairs-counter"><span id="pairs">0</span></div>
+  <div class="counter moves-counter" id="moves">0</div>
+  <button class="hot restart" id="restart" aria-label="Ricomincia"></button>
+  <button class="hot sound-toggle" id="sound" aria-label="Audio">🔊</button>
+  <section id="grid" class="game-grid" aria-label="Carte Memory"></section>
+  <a class="home" href="index.html?v=50" aria-label="Scegli livello">⌂</a>
+  <div id="win" class="win" hidden><div class="panel"><div class="stars">⭐ ✨ ⭐</div><h2>Bravissimo!</h2><p>Hai trovato tutte le coppie.</p><button id="again">Gioca ancora</button><a href="index.html?v=50">Scegli un altro livello</a></div></div>
+</main>
+<script src="levels-v21.js?v=50"></script>
+<script>
+LEVELS[0].items.find(x=>x.id==='sheep').audio='https://upload.wikimedia.org/wikipedia/commons/1/13/Sheep_bleating.ogg';
+LEVELS[0].items.find(x=>x.id==='rooster').start=0.55;
+LEVELS[1].items.find(x=>x.id==='horn').emoji='🚗';
+const bus=LEVELS[1].items.find(x=>x.id==='bus');
+bus.audio='https://upload.wikimedia.org/wikipedia/commons/transcoded/6/69/WWS_CityBusMANSG220engine.ogg/WWS_CityBusMANSG220engine.ogg.mp3';
+bus.start=6.0;
+const mountain=LEVELS[3].items;
+mountain.find(x=>x.id==='eagle').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Golden%20eagle.ogg';
+mountain.find(x=>x.id==='deer').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hirsch%20roehrt.ogg';
+mountain.find(x=>x.id==='marmot').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/2006%2C%20Murmeldjur%20BHW%202006.ogg';
+mountain.find(x=>x.id==='wind').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Howling%20wind.ogg';
+mountain.find(x=>x.id==='cowbell').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Cowbells%20on%20Monte%20Baldo.ogg';
+mountain.find(x=>x.id==='stream').audio='https://commons.wikimedia.org/wiki/Special:Redirect/file/Hemlock%20stream.ogg';
+const forest=LEVELS[4].items;
+forest.find(x=>x.id==='bear').audio='https://upload.wikimedia.org/wikipedia/commons/4/4e/Bear_growl.ogg';
+forest.find(x=>x.id==='squirrel').audio='https://upload.wikimedia.org/wikipedia/commons/8/83/Tamiasciurus_douglasii.ogg';
+forest.find(x=>x.id==='stream').audio='https://upload.wikimedia.org/wikipedia/commons/3/32/Hemlock_stream.ogg';
+forest.find(x=>x.id==='leaves').audio='https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8a/Singing_birds%2C_thunder_and_rustling_leaves.oga/Singing_birds%2C_thunder_and_rustling_leaves.oga.mp3';
+const monkey=LEVELS[5].items.find(x=>x.id==='monkey');
+monkey.audio='audio/scimmia-claudio-v44.mp3';
+delete monkey.start;
+const forcedBg={5:2,2:6,6:6};
+if(Object.prototype.hasOwnProperty.call(forcedBg,levelIndex)){
+  for(let i=0;i<8;i++){art.classList.remove('l'+i);screen.classList.remove('l'+i)}
+  const bg=forcedBg[levelIndex];art.classList.add('l'+bg);screen.classList.add('l'+bg);
+}
+</script>
+<script src="custom-audio.js?v=50"></script>
+</body>
+</html>
