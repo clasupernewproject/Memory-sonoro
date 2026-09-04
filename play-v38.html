@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7fd2fa">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Memory Sonoro v38</title>
+<link rel="stylesheet" href="levels.css?v=38">
+</head>
+<body class="play-page">
+<main id="screen" class="screen">
+  <div id="art" class="art level-bg"></div>
+  <div class="counter pairs-counter"><span id="pairs">0</span></div>
+  <div class="counter moves-counter" id="moves">0</div>
+  <button class="hot restart" id="restart" aria-label="Ricomincia"></button>
+  <button class="hot sound-toggle" id="sound" aria-label="Audio">🔊</button>
+  <section id="grid" class="game-grid" aria-label="Carte Memory"></section>
+  <a class="home" href="index.html?v=38" aria-label="Scegli livello">⌂</a>
+  <div id="win" class="win" hidden>
+    <div class="panel"><div class="stars">⭐ ✨ ⭐</div><h2>Bravissimo!</h2><p>Hai trovato tutte le coppie.</p><button id="again">Gioca ancora</button><a href="index.html?v=38">Scegli un altro livello</a></div>
+  </div>
+</main>
+<script src="levels-v21.js?v=38"></script>
+<script>
+LEVELS[0].items.find(x=>x.id==='sheep').audio='https://upload.wikimedia.org/wikipedia/commons/1/13/Sheep_bleating.ogg';
+LEVELS[0].items.find(x=>x.id==='rooster').start=0.55;
+LEVELS[1].items.find(x=>x.id==='horn').emoji='🚗';
+LEVELS[1].items.find(x=>x.id==='bus').audio='https://upload.wikimedia.org/wikipedia/commons/transcoded/6/69/WWS_CityBusMANSG220engine.ogg/WWS_CityBusMANSG220engine.ogg.mp3';
+
+// Mappatura grafica corretta dei tre livelli che erano ruotati.
+const forcedBg = {5:2, 2:6, 6:5}; // Giungla, Mare, Notte
+if (Object.prototype.hasOwnProperty.call(forcedBg, levelIndex)) {
+  for (let i=0;i<8;i++) {
+    art.classList.remove('l'+i);
+    screen.classList.remove('l'+i);
+  }
+  const bg = forcedBg[levelIndex];
+  art.classList.add('l'+bg);
+  screen.classList.add('l'+bg);
+}
+</script>
+<script src="custom-audio.js?v=38"></script>
+</body>
+</html>
