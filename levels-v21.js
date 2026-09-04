@@ -9,7 +9,7 @@ const LEVELS=[
 {name:'La città',bg:1,items:[
 {id:'bus',name:'Autobus',emoji:'🚌',audio:'https://commons.wikimedia.org/wiki/Special:Redirect/file/WWS%20CityBusMANSG220horn.ogg'},
 {id:'siren',name:'Sirena',emoji:'🚨',audio:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siren.ogg'},
-{id:'horn',name:'Clacson',emoji:'📣',audio:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car%20Horn.wav'},
+{id:'horn',name:'Clacson',emoji:'🚗',audio:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car%20Horn.wav'},
 {id:'bell',name:'Campanello',emoji:'🔔',audio:'https://upload.wikimedia.org/wikipedia/commons/9/90/Doorbell-cheap-dingdong.ogg'},
 {id:'train',name:'Treno',emoji:'🚆',audio:'https://upload.wikimedia.org/wikipedia/commons/7/7a/WWS_Signalhorntrainhorn.ogg'},
 {id:'beep',name:'Semaforo',emoji:'🚦',audio:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Beep-09.ogg'}]},
