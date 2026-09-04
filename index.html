@@ -8,7 +8,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Memory Sonoro · Colori da Ascoltare</title>
-<link rel="stylesheet" href="levels.css?v=40">
+<link rel="stylesheet" href="levels.css?v=41">
 </head>
 <body class="menu-page">
 <main class="menu-shell">
@@ -21,7 +21,7 @@
 const levels=[['La fattoria','🐄'],['La città','🚦'],['La giungla','🐆'],['La montagna','🏔️'],['Il bosco','🌳'],['La notte','🌙'],['Il mare','🌊'],['Suoni monelli','💨']];
 const gameLevels=[0,1,5,3,4,6,2,7];
 const grid=document.querySelector('#levelGrid');
-levels.forEach((x,i)=>{const a=document.createElement('a');a.href='play-v40.html?level='+gameLevels[i]+'&build=40';a.className='level-card';a.innerHTML=`<span class="thumb level-bg l${i}"></span><span class="level-label"><b>Livello ${i+1}</b><span>${x[1]} ${x[0]}</span></span>`;grid.appendChild(a)});
+levels.forEach((x,i)=>{const a=document.createElement('a');a.href='play-v41.html?level='+gameLevels[i]+'&build=41';a.className='level-card';a.innerHTML=`<span class="thumb level-bg l${i}"></span><span class="level-label"><b>Livello ${i+1}</b><span>${x[1]} ${x[0]}</span></span>`;grid.appendChild(a)});
 </script>
 </body>
 </html>
