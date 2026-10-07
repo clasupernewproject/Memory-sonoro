@@ -67,6 +67,10 @@ class _GameScreenState extends State<GameScreen> {
 
   Future<void> _play(SoundItem item) async {
     if (!_soundOn) return;
+    if (item.audioUrl.isEmpty) {
+      await SystemSound.play(SystemSoundType.click);
+      return;
+    }
     try {
       await _player.stop();
       await _player.play(UrlSource(item.audioUrl));
@@ -301,6 +305,8 @@ class _LevelBackdrop extends StatelessWidget {
     final colors = switch (level.id) {
       'city' => const [Color(0xFF8ED9FF), Color(0xFFDDE8EE)],
       'sea' => const [Color(0xFF74D8F7), Color(0xFF0877B9)],
+      'mountain' => const [Color(0xFFAEDAF0), Color(0xFF6D8C70)],
+      'woods' => const [Color(0xFF8BCB78), Color(0xFF245D38)],
       _ => const [Color(0xFFB9E27A), Color(0xFF86D3F7)],
     };
     return DecoratedBox(
