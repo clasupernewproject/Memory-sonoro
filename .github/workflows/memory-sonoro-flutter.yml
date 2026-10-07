@@ -31,7 +31,7 @@ jobs:
           cache: true
 
       - name: Create missing Flutter platform files
-        run: flutter create --platforms=android --project-name memory_sonoro --no-overwrite .
+        run: flutter create --platforms=android --project-name memory_sonoro .\n          rm -f test/widget_test.dart
 
       - name: Get dependencies
         run: flutter pub get
