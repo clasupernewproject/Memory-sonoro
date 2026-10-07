@@ -8,10 +8,12 @@ void main() {
     expect(find.text('La fattoria'), findsOneWidget);
 
     await tester.tap(find.text('La fattoria'));
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
 
-    expect(find.text('🐄 La fattoria'), findsOneWidget);
-    expect(find.text('Coppie: 0/6'), findsOneWidget);
-    expect(find.text('Mosse: 0'), findsOneWidget);
+    expect(find.byTooltip('Audio'), findsOneWidget);
+    expect(find.byTooltip('Ricomincia'), findsOneWidget);
+    expect(find.byTooltip('Home'), findsOneWidget);
+    expect(find.text('0'), findsNWidgets(2));
   });
 }
