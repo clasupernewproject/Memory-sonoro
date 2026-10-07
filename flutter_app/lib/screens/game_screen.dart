@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../data/levels.dart';
+import '../models/game_level.dart';
 import '../models/sound_item.dart';
 
 class _CardEntry {
@@ -18,7 +19,9 @@ class _CardEntry {
 }
 
 class GameScreen extends StatefulWidget {
-  const GameScreen({super.key});
+  const GameScreen({super.key, required this.level});
+
+  final GameLevel level;
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -39,7 +42,7 @@ class _GameScreenState extends State<GameScreen> {
   void initState() {
     super.initState();
     _background = rootBundle
-        .loadString('assets/artwork/fattoria.b64')
+        .loadString(widget.level.backgroundAsset!)
         .then((value) => base64Decode(value.trim()));
     _reset(notify: false);
   }
@@ -47,7 +50,7 @@ class _GameScreenState extends State<GameScreen> {
   void _reset({bool notify = true}) {
     final cards = <_CardEntry>[];
     var serial = 0;
-    for (final item in farmItems) {
+    for (final item in widget.level.items) {
       cards.add(_CardEntry(item, serial++));
       cards.add(_CardEntry(item, serial++));
     }
@@ -93,7 +96,7 @@ class _GameScreenState extends State<GameScreen> {
         _pairs++;
         _locked = false;
       });
-      if (_pairs == farmItems.length) {
+      if (_pairs == widget.level.items.length) {
         await Future<void>.delayed(const Duration(milliseconds: 350));
         if (mounted) _showWin();
       }
