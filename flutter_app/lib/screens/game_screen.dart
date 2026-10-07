@@ -1,12 +1,10 @@
 import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../data/levels.dart';
 import '../models/game_level.dart';
 import '../models/sound_item.dart';
 
@@ -152,7 +150,7 @@ class _GameScreenState extends State<GameScreen> {
 
   Widget _roundButton(IconData icon, VoidCallback onPressed, String tooltip) {
     return Material(
-      color: Colors.white.withOpacity(.92),
+      color: Colors.white.withValues(alpha: .92),
       shape: const CircleBorder(),
       elevation: 2,
       child: IconButton(tooltip: tooltip, onPressed: onPressed, icon: Icon(icon, color: const Color(0xFF173D9B))),
