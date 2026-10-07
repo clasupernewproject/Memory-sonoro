@@ -47,13 +47,32 @@ const woodsItems = <SoundItem>[
   SoundItem(id: 'leaves', name: 'Foglie', emoji: '🍃', audioUrl: ''),
 ];
 
+
+const jungleItems = <SoundItem>[
+  SoundItem(id: 'monkey', name: 'Scimmia', emoji: '🐒', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Howler_monkey.ogg'),
+  SoundItem(id: 'parrot', name: 'Pappagallo', emoji: '🦜', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Talking_Parrot_%28Psittacula_krameri%29.ogg'),
+  SoundItem(id: 'jaguar', name: 'Giaguaro', emoji: '🐆', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jaguar%20saw.flac'),
+  SoundItem(id: 'toucan', name: 'Tucano', emoji: '🐦', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Keel-billed%20toucan.ogg'),
+  SoundItem(id: 'rain', name: 'Pioggia', emoji: '🌧️', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Rain.ogg'),
+  SoundItem(id: 'frog', name: 'Rana', emoji: '🐸', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga'),
+];
+
+const nightItems = <SoundItem>[
+  SoundItem(id: 'owl', name: 'Gufo', emoji: '🦉', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Short-eared_Owl.ogg'),
+  SoundItem(id: 'cricket', name: 'Grillo', emoji: '🦗', audioUrl: ''),
+  SoundItem(id: 'frog', name: 'Rana', emoji: '🐸', audioUrl: ''),
+  SoundItem(id: 'wolf', name: 'Lupo', emoji: '🐺', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Wolf_howls.ogg'),
+  SoundItem(id: 'wind', name: 'Vento', emoji: '💨', audioUrl: ''),
+  SoundItem(id: 'nightbird', name: 'Uccello', emoji: '🐦', audioUrl: ''),
+];
+
 const levels = <GameLevel>[
   GameLevel(id: 'farm', name: 'La fattoria', emoji: '🐄', items: farmItems, backgroundAsset: 'assets/artwork/fattoria.b64'),
   GameLevel(id: 'city', name: 'La città', emoji: '🚌', items: cityItems),
   GameLevel(id: 'sea', name: 'Il mare', emoji: '🌊', items: seaItems),
   GameLevel(id: 'mountain', name: 'La montagna', emoji: '🦅', items: mountainItems),
   GameLevel(id: 'woods', name: 'Il bosco', emoji: '🐺', items: woodsItems),
-  GameLevel(id: 'jungle', name: 'La giungla', emoji: '🐒', items: [], available: false),
-  GameLevel(id: 'night', name: 'La notte', emoji: '🦉', items: [], available: false),
+  GameLevel(id: 'jungle', name: 'La giungla', emoji: '🐒', items: jungleItems),
+  GameLevel(id: 'night', name: 'La notte', emoji: '🦉', items: nightItems),
   GameLevel(id: 'savanna', name: 'La savana', emoji: '🦁', items: [], available: false),
 ];
