@@ -307,6 +307,8 @@ class _LevelBackdrop extends StatelessWidget {
       'sea' => const [Color(0xFF74D8F7), Color(0xFF0877B9)],
       'mountain' => const [Color(0xFFAEDAF0), Color(0xFF6D8C70)],
       'woods' => const [Color(0xFF8BCB78), Color(0xFF245D38)],
+      'jungle' => const [Color(0xFF74C96B), Color(0xFF174C2B)],
+      'night' => const [Color(0xFF263D72), Color(0xFF10162F)],
       _ => const [Color(0xFFB9E27A), Color(0xFF86D3F7)],
     };
     return DecoratedBox(
