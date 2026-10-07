@@ -66,6 +66,16 @@ const nightItems = <SoundItem>[
   SoundItem(id: 'nightbird', name: 'Uccello', emoji: '🐦', audioUrl: ''),
 ];
 
+
+const savannaItems = <SoundItem>[
+  SoundItem(id: 'lion', name: 'Leone', emoji: '🦁', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Lion%20raring-sound1TamilNadu178.ogg'),
+  SoundItem(id: 'elephant', name: 'Elefante', emoji: '🐘', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephant%20voice%20-%20trumpeting.ogg'),
+  SoundItem(id: 'zebra', name: 'Zebra', emoji: '🦓', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Gr%C3%A9vys%20zebra%20%28Sound%20Effects%29.ogg'),
+  SoundItem(id: 'giraffe', name: 'Giraffa', emoji: '🦒', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Giraffe%20grunt.oga'),
+  SoundItem(id: 'hippo', name: 'Ippopotamo', emoji: '🦛', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Hippo.ogv'),
+  SoundItem(id: 'leopard', name: 'Leopardo', emoji: '🐆', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Leopard.ogv'),
+];
+
 const levels = <GameLevel>[
   GameLevel(id: 'farm', name: 'La fattoria', emoji: '🐄', items: farmItems, backgroundAsset: 'assets/artwork/fattoria.b64'),
   GameLevel(id: 'city', name: 'La città', emoji: '🚌', items: cityItems),
@@ -74,5 +84,5 @@ const levels = <GameLevel>[
   GameLevel(id: 'woods', name: 'Il bosco', emoji: '🐺', items: woodsItems),
   GameLevel(id: 'jungle', name: 'La giungla', emoji: '🐒', items: jungleItems),
   GameLevel(id: 'night', name: 'La notte', emoji: '🦉', items: nightItems),
-  GameLevel(id: 'savanna', name: 'La savana', emoji: '🦁', items: [], available: false),
+  GameLevel(id: 'savanna', name: 'La savana', emoji: '🦁', items: savannaItems),
 ];
