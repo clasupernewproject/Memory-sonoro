@@ -143,7 +143,7 @@ class _GameScreenState extends State<GameScreen> {
 
   Widget _roundButton(IconData icon, VoidCallback onPressed, String tooltip) {
     return Material(
-      color: Colors.white.withValues(alpha: .92),
+      color: Colors.white.withOpacity(.92),
       shape: const CircleBorder(),
       elevation: 2,
       child: IconButton(tooltip: tooltip, onPressed: onPressed, icon: Icon(icon, color: const Color(0xFF173D9B))),
