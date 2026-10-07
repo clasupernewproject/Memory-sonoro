@@ -1,6 +1,11 @@
+import 'dart:convert';
 import 'dart:math';
+import 'dart:typed_data';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../data/levels.dart';
 import '../models/sound_item.dart';
 
@@ -23,6 +28,7 @@ class _GameScreenState extends State<GameScreen> {
   final AudioPlayer _player = AudioPlayer();
   final Random _random = Random();
   late List<_CardEntry> _cards;
+  late Future<Uint8List> _background;
   int? _firstIndex;
   bool _locked = false;
   bool _soundOn = true;
@@ -32,10 +38,13 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     super.initState();
-    _reset();
+    _background = rootBundle
+        .loadString('assets/artwork/fattoria.b64')
+        .then((value) => base64Decode(value.trim()));
+    _reset(notify: false);
   }
 
-  void _reset() {
+  void _reset({bool notify = true}) {
     final cards = <_CardEntry>[];
     var serial = 0;
     for (final item in farmItems) {
@@ -48,7 +57,7 @@ class _GameScreenState extends State<GameScreen> {
     _locked = false;
     _moves = 0;
     _pairs = 0;
-    if (mounted) setState(() {});
+    if (notify && mounted) setState(() {});
   }
 
   Future<void> _play(SoundItem item) async {
@@ -132,89 +141,144 @@ class _GameScreenState extends State<GameScreen> {
     super.dispose();
   }
 
+  Widget _roundButton(IconData icon, VoidCallback onPressed, String tooltip) {
+    return Material(
+      color: Colors.white.withValues(alpha: .92),
+      shape: const CircleBorder(),
+      elevation: 2,
+      child: IconButton(tooltip: tooltip, onPressed: onPressed, icon: Icon(icon, color: const Color(0xFF173D9B))),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB9E27A),
-      appBar: AppBar(
-        title: const Text('🐄 La fattoria'),
-        actions: [
-          IconButton(
-            tooltip: 'Audio',
-            onPressed: () async {
-              setState(() => _soundOn = !_soundOn);
-              if (!_soundOn) await _player.stop();
-            },
-            icon: Icon(_soundOn ? Icons.volume_up : Icons.volume_off),
-          ),
-          IconButton(tooltip: 'Ricomincia', onPressed: _reset, icon: const Icon(Icons.refresh)),
-        ],
-      ),
+      backgroundColor: const Color(0xFF86D3F7),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Coppie: $_pairs/6', style: const TextStyle(fontWeight: FontWeight.bold)),
-                  Text('Mosse: $_moves', style: const TextStyle(fontWeight: FontWeight.bold)),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18),
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    childAspectRatio: .78,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
-                  ),
-                  itemCount: _cards.length,
-                  itemBuilder: (context, index) {
-                    final card = _cards[index];
-                    final visible = card.faceUp || card.matched;
-                    return Semantics(
-                      button: true,
-                      label: visible ? card.item.name : 'Carta coperta',
-                      child: InkWell(
-                        key: ValueKey(card.serial),
-                        borderRadius: BorderRadius.circular(16),
-                        onTap: () => _pick(index),
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 180),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: visible ? const Color(0xFFFFF0B5) : const Color(0xFF2764B8),
-                            border: Border.all(color: Colors.white, width: 3),
-                            boxShadow: const [BoxShadow(blurRadius: 5, offset: Offset(0, 3), color: Color(0x33000000))],
-                          ),
-                          child: Center(
-                            child: visible
-                                ? Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text(card.item.emoji, style: const TextStyle(fontSize: 42)),
-                                      const SizedBox(height: 6),
-                                      Text(card.item.name, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.w800)),
-                                    ],
-                                  )
-                                : const Icon(Icons.music_note, color: Colors.white, size: 42),
-                          ),
+        child: Center(
+          child: AspectRatio(
+            aspectRatio: 2 / 3,
+            child: LayoutBuilder(
+              builder: (context, box) {
+                return Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    FutureBuilder<Uint8List>(
+                      future: _background,
+                      builder: (context, snapshot) => snapshot.hasData
+                          ? Image.memory(snapshot.data!, fit: BoxFit.fill, gaplessPlayback: true)
+                          : const ColoredBox(color: Color(0xFFB9E27A)),
+                    ),
+                    Positioned(
+                      left: box.maxWidth * .227,
+                      top: box.maxHeight * .398,
+                      width: box.maxWidth * .626,
+                      height: box.maxHeight * .399,
+                      child: GridView.builder(
+                        padding: EdgeInsets.zero,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          childAspectRatio: 1,
+                          crossAxisSpacing: 4,
+                          mainAxisSpacing: 4,
                         ),
+                        itemCount: _cards.length,
+                        itemBuilder: (context, index) {
+                          final card = _cards[index];
+                          final visible = card.faceUp || card.matched;
+                          return Semantics(
+                            button: true,
+                            label: visible ? card.item.name : 'Carta coperta',
+                            child: InkWell(
+                              key: ValueKey(card.serial),
+                              borderRadius: BorderRadius.circular(10),
+                              onTap: () => _pick(index),
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 220),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: visible
+                                      ? (card.matched ? const Color(0xFFDFFFD7) : const Color(0xFFFFF0CF))
+                                      : Colors.transparent,
+                                  border: visible ? Border.all(color: Colors.white, width: 2) : null,
+                                ),
+                                child: visible
+                                    ? FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(3),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(card.item.emoji, style: const TextStyle(fontSize: 34)),
+                                              Text(card.item.name, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w900)),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    : null,
+                              ),
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  },
-                ),
-              ),
+                    ),
+                    Positioned(
+                      left: box.maxWidth * .40,
+                      top: box.maxHeight * .26,
+                      child: _Counter(value: '$_pairs'),
+                    ),
+                    Positioned(
+                      left: box.maxWidth * .646,
+                      top: box.maxHeight * .26,
+                      child: _Counter(value: '$_moves'),
+                    ),
+                    Positioned(
+                      left: 10,
+                      top: 10,
+                      child: _roundButton(
+                        _soundOn ? Icons.volume_up : Icons.volume_off,
+                        () async {
+                          setState(() => _soundOn = !_soundOn);
+                          if (!_soundOn) await _player.stop();
+                        },
+                        'Audio',
+                      ),
+                    ),
+                    Positioned(
+                      right: 10,
+                      top: 10,
+                      child: _roundButton(Icons.home_rounded, () => Navigator.pop(context), 'Home'),
+                    ),
+                    Positioned(
+                      left: box.maxWidth * .46,
+                      top: box.maxHeight * .18,
+                      child: _roundButton(Icons.refresh, _reset, 'Ricomincia'),
+                    ),
+                  ],
+                );
+              },
             ),
-          ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class _Counter extends StatelessWidget {
+  const _Counter({required this.value});
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minWidth: 34, minHeight: 28),
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 7),
+      decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+      child: Text(value, style: const TextStyle(color: Color(0xFF112D70), fontWeight: FontWeight.w900)),
     );
   }
 }
