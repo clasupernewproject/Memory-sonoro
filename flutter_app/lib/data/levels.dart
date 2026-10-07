@@ -28,12 +28,31 @@ const seaItems = <SoundItem>[
   SoundItem(id: 'shell', name: 'Conchiglia', emoji: '🐚', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Conch%20shell.ogg'),
 ];
 
+
+const mountainItems = <SoundItem>[
+  SoundItem(id: 'eagle', name: 'Aquila', emoji: '🦅', audioUrl: ''),
+  SoundItem(id: 'deer', name: 'Cervo', emoji: '🦌', audioUrl: ''),
+  SoundItem(id: 'marmot', name: 'Marmotta', emoji: '🐿️', audioUrl: ''),
+  SoundItem(id: 'wind', name: 'Vento', emoji: '💨', audioUrl: ''),
+  SoundItem(id: 'cowbell', name: 'Campanaccio', emoji: '🔔', audioUrl: ''),
+  SoundItem(id: 'stream', name: 'Ruscello', emoji: '🏞️', audioUrl: ''),
+];
+
+const woodsItems = <SoundItem>[
+  SoundItem(id: 'wolf', name: 'Lupo', emoji: '🐺', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Wolf_howls.ogg'),
+  SoundItem(id: 'bear', name: 'Orso', emoji: '🐻', audioUrl: ''),
+  SoundItem(id: 'woodpecker', name: 'Picchio', emoji: '🐦', audioUrl: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Woodpeckerdrum.ogg'),
+  SoundItem(id: 'squirrel', name: 'Scoiattolo', emoji: '🐿️', audioUrl: ''),
+  SoundItem(id: 'stream', name: 'Ruscello', emoji: '💧', audioUrl: ''),
+  SoundItem(id: 'leaves', name: 'Foglie', emoji: '🍃', audioUrl: ''),
+];
+
 const levels = <GameLevel>[
   GameLevel(id: 'farm', name: 'La fattoria', emoji: '🐄', items: farmItems, backgroundAsset: 'assets/artwork/fattoria.b64'),
   GameLevel(id: 'city', name: 'La città', emoji: '🚌', items: cityItems),
   GameLevel(id: 'sea', name: 'Il mare', emoji: '🌊', items: seaItems),
-  GameLevel(id: 'mountain', name: 'La montagna', emoji: '🦅', items: [], available: false),
-  GameLevel(id: 'woods', name: 'Il bosco', emoji: '🐺', items: [], available: false),
+  GameLevel(id: 'mountain', name: 'La montagna', emoji: '🦅', items: mountainItems),
+  GameLevel(id: 'woods', name: 'Il bosco', emoji: '🐺', items: woodsItems),
   GameLevel(id: 'jungle', name: 'La giungla', emoji: '🐒', items: [], available: false),
   GameLevel(id: 'night', name: 'La notte', emoji: '🦉', items: [], available: false),
   GameLevel(id: 'savanna', name: 'La savana', emoji: '🦁', items: [], available: false),
