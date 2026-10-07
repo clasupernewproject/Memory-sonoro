@@ -41,9 +41,11 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     super.initState();
-    _background = rootBundle
-        .loadString(widget.level.backgroundAsset!)
-        .then((value) => base64Decode(value.trim()));
+    _background = widget.level.backgroundAsset == null
+        ? Future<Uint8List>.value(Uint8List(0))
+        : rootBundle
+            .loadString(widget.level.backgroundAsset!)
+            .then((value) => base64Decode(value.trim()));
     _reset(notify: false);
   }
 
@@ -168,9 +170,12 @@ class _GameScreenState extends State<GameScreen> {
                   children: [
                     FutureBuilder<Uint8List>(
                       future: _background,
-                      builder: (context, snapshot) => snapshot.hasData
-                          ? Image.memory(snapshot.data!, fit: BoxFit.fill, gaplessPlayback: true)
-                          : const ColoredBox(color: Color(0xFFB9E27A)),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                          return Image.memory(snapshot.data!, fit: BoxFit.fill, gaplessPlayback: true);
+                        }
+                        return _LevelBackdrop(level: widget.level);
+                      },
                     ),
                     Positioned(
                       left: box.maxWidth * .227,
@@ -282,6 +287,31 @@ class _Counter extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 7),
       decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
       child: Text(value, style: const TextStyle(color: Color(0xFF112D70), fontWeight: FontWeight.w900)),
+    );
+  }
+}
+
+
+class _LevelBackdrop extends StatelessWidget {
+  const _LevelBackdrop({required this.level});
+  final GameLevel level;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = switch (level.id) {
+      'city' => const [Color(0xFF8ED9FF), Color(0xFFDDE8EE)],
+      'sea' => const [Color(0xFF74D8F7), Color(0xFF0877B9)],
+      _ => const [Color(0xFFB9E27A), Color(0xFF86D3F7)],
+    };
+    return DecoratedBox(
+      decoration: BoxDecoration(gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: colors)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(level.emoji, style: const TextStyle(fontSize: 92)),
+          Text(level.name, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w900, color: Colors.white)),
+        ],
+      ),
     );
   }
 }
