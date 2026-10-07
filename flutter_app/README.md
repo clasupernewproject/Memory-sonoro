@@ -21,3 +21,6 @@ La versione web storica nella root del repository non viene modificata.
 3. Trasferire grafica originale e animazione finale.
 4. Generalizzare il motore e aggiungere gli altri livelli.
 5. Generare Android e iOS.
+
+
+Build trigger: 2026-10-07 — Android CI enabled for the Flutter migration.
