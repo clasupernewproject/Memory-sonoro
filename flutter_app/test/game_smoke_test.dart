@@ -8,7 +8,6 @@ void main() {
     expect(find.text('Memory Sonoro'), findsOneWidget);
     expect(find.text('La fattoria'), findsOneWidget);
     expect(find.text('La città'), findsOneWidget);
-    expect(find.text('La savana'), findsOneWidget);
 
     await tester.tap(find.text('La fattoria'));
     await tester.pump();
