@@ -2,10 +2,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:memory_sonoro/main.dart';
 
 void main() {
-  testWidgets('apre la Fattoria dalla home', (tester) async {
+  testWidgets('mostra il menu e apre la Fattoria', (tester) async {
     await tester.pumpWidget(const MemorySonoroApp());
+
     expect(find.text('Memory Sonoro'), findsOneWidget);
     expect(find.text('La fattoria'), findsOneWidget);
+    expect(find.text('La città'), findsOneWidget);
+    expect(find.text('La savana'), findsOneWidget);
 
     await tester.tap(find.text('La fattoria'));
     await tester.pump();
